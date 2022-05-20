@@ -1,22 +1,14 @@
 <template>
   <div class="container">
     <h3> Items:</h3>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">ItemCode</th>
-          <th scope="col">ItemDescription</th>
-          <th scope="col">TechnicalGroup</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in items" v-bind:key="item.ItemCode"> 
-          <th scope="row">{{item.ItemCode}}</th>
-          <td>{{item.ItemDescription}}</td>
-          <td>{{item.TechnicalGroup}}</td>
-        </tr>
-      </tbody>
-    </table> 
+        <div v-for="item in items" v-bind:key="item.ItemCode">
+            <form id="formElem">
+                <input type="text" name="ItemCode" v-model="item.ItemCode">
+                <input type="text" name="ItemDescription" v-model="item.ItemDescription">
+                <input type="text" name="TechnicalGroup" v-model="item.TechnicalGroup">
+                <button type="submit">Submit</button>
+            </form> 
+        </div>
   </div> 
 </template>
 
