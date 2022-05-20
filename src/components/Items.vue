@@ -29,9 +29,13 @@
         })
     },
     methods: {
-      submitItem: function (id, desc, group) {
-        alert(id + desc + group)
-      }
+        submitItem: function (id, desc, grp) {
+            axios.put('http://localhost/itemsput', {
+                ItemCode: id,
+                ItemDescription: desc,
+                TechnicalGroup: grp
+            });
+        }
   }  
   }
 </script>
