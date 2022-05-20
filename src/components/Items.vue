@@ -6,14 +6,14 @@
                 <input type="text" name="ItemCode" v-model="item.ItemCode" disabled />
                 <input type="text" name="ItemDescription" v-model="item.ItemDescription">
                 <input type="text" name="TechnicalGroup" v-model="item.TechnicalGroup">
-                <button type="submit">Submit</button>
+                <button type="submit" v-on:click="submitItem(item.ItemCode, item.ItemDescription, item.TechnicalGroup)">Submit</button>
             </form> 
         </div>
   </div> 
 </template>
 
 <script>
-  import axios from 'axios';
+  import axios from 'axios';  
   export default {
     name: 'ItemDetails',
     data() {
@@ -21,13 +21,18 @@
         items: null,
       };
     },
-    created: function() {
+    created: function () {
       axios
         .get('https://my-json-server.typicode.com/danielcontreras-ppg/myjsonserver-lfaitems/items')
         .then(res => {
           this.items = res.data;
         })
-    }
+    },
+    methods: {
+      submitItem: function (id, desc, group) {
+        alert(id + desc + group)
+      }
+  }  
   }
 </script>
 
