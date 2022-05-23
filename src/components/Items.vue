@@ -23,7 +23,7 @@
     },
     created: function () {
       axios
-        .get('https://my-json-server.typicode.com/danielcontreras-ppg/myjsonserver-lfaitems/items')
+        .get('https://localhost:7188/api/items/getitems')
         .then(res => {
           this.items = res.data;
         })
