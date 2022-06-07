@@ -23,14 +23,14 @@
     },
     created: function () {
       axios
-        .get('http://items.lfa/api/items/getitems')
+        .get('http://35.158.164.206:8080/api/items/getitems')
         .then(res => {
           this.items = res.data;
         })
     },
     methods: {
         submitItem: function (id, desc, grp) {
-            axios.put('http://items.lfa/api/items/putitems', {
+            axios.put('http://35.158.164.206:8080/api/items/putitems', {
                 itemcode: id,
                 itemdescription: desc,
                 technicalgroup: grp
